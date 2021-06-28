@@ -34,6 +34,11 @@ public class TweetController {
 		return ResponseEntity.ok(new Response<List<TweetMS>>(this.tweetService.findTweets(hashtag)));
 	}
 	
+	@GetMapping("/api/tweetsAndReTweets/{hashtag}")
+	public ResponseEntity<Response<List<TweetMS>>> getTweetsAndReTweetsFromTwitterApi(@PathVariable String hashtag) {
+		return ResponseEntity.ok(new Response<List<TweetMS>>(this.tweetService.findTweetsAndReTweets(hashtag)));
+	}
+	
 	@GetMapping("/{id}")
 	public ResponseEntity<Response<Optional<TweetMS>>> getTweetById(@PathVariable String id) {
 		return ResponseEntity.ok(new Response<Optional<TweetMS>>(this.tweetService.findTweetById(id)));

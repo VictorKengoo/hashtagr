@@ -31,10 +31,7 @@ public class TweetUtils {
 	public List<Tweet> fetchTweets(String hashtag) {
 		Twitter twitter = new TwitterTemplate(consumerKey, consumerSecret, accessToken, accessTokenSecret);
 		String parsedHashtag = "#" + hashtag;
-		SearchParameters params = new SearchParameters(parsedHashtag).count(500);
-		List<Tweet> result = twitter.searchOperations().search(params).getTweets();
-		
-		return result;
+		return twitter.searchOperations().search(parsedHashtag, 100).getTweets();
 	}
 	
 	public TweetMS buildTweet(Tweet item, String hashtag) {
