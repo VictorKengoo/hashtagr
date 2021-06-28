@@ -12,7 +12,6 @@
 	<groupId>com.springboot.ibm</groupId>
 	<artifactId>hashtagr</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
 	<name>hashtagr</name>
 	<description>Backend of hashtagr, a web application that shows Twitter hashtags per region</description>
 	<properties>
