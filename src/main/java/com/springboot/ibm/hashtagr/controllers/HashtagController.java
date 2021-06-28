@@ -22,11 +22,6 @@ public class HashtagController {
 	@Autowired
 	private HashtagService hashtagService;
 	
-	@GetMapping("/")
-	public String home() {
-		return "Bem vindo ao hashtagr!!";
-	}
-	
 	@PostMapping("/new")
 	public ResponseEntity<Response<Hashtag>> insertHashtag(@RequestBody Hashtag hashtag) {
 		return ResponseEntity.ok(new Response<Hashtag>(this.hashtagService.saveHashtag(hashtag)));
