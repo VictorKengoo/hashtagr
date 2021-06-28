@@ -3,8 +3,7 @@ package com.springboot.ibm.hashtagr.service;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.social.twitter.api.SearchResults;
-import org.springframework.social.twitter.api.Tweet;
+import org.springframework.social.twitter.api.Twitter;
 
 import com.springboot.ibm.hashtagr.domain.TweetMS;
 

@@ -8,7 +8,11 @@ import lombok.Setter;
 @Getter
 @Setter
 public class TweetMS {
-    
+
+	private Long tweetId;
+	
+	private String userName;
+	
     private String body;
     
 	public String hashtag;

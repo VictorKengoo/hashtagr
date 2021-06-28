@@ -17,7 +17,8 @@ public class TweetServiceImpl implements TweetService{
 	@Autowired
 	private TweetRepository tweetRepository;
 	
-	TweetUtils tweetUtils = new TweetUtils();
+	@Autowired
+	TweetUtils tweetUtils;
 	
 	@Override
 	public List<TweetMS> findTweets(String hashtag) {
