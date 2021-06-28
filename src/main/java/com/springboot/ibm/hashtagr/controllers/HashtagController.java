@@ -23,7 +23,7 @@ public class HashtagController {
 	private HashtagService hashtagService;
 	
 	@GetMapping("/")
-	public String home(@RequestBody Hashtag hashtag) {
+	public String home() {
 		return "Bem vindo ao hashtagr!!";
 	}
 	
