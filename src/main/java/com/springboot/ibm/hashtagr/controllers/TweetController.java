@@ -5,7 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.social.twitter.api.SearchResults;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,11 +29,13 @@ public class TweetController {
 	@Autowired
 	private HashtagService hashtagService;
 	
+	@CrossOrigin(origins = "http://localhost:3000/SearchHashtag")
 	@GetMapping("/api/tweets/{hashtag}")
 	public ResponseEntity<Response<List<TweetMS>>> getTweetsFromTwitterApi(@PathVariable String hashtag) {
 		return ResponseEntity.ok(new Response<List<TweetMS>>(this.tweetService.findTweets(hashtag)));
 	}
 	
+	@CrossOrigin(origins = "http://localhost:3000/SearchHashtag")
 	@GetMapping("/api/tweetsAndReTweets/{hashtag}")
 	public ResponseEntity<Response<List<TweetMS>>> getTweetsAndReTweetsFromTwitterApi(@PathVariable String hashtag) {
 		return ResponseEntity.ok(new Response<List<TweetMS>>(this.tweetService.findTweetsAndReTweets(hashtag)));
